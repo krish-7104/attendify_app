@@ -3,6 +3,10 @@
 
 Attendify is a convenient and easy-to-use attendance tracker designed specifically for students. With Attendify, you can easily keep track of your attendance for all your classes in one place.
 
+## Download App
+
+https://drive.google.com/file/d/1iOJn1m4jKh95apn0oHk1bhN5D-TUtDxP/view?usp=sharing
+
 
 ## Tech Stack
 
@@ -25,9 +29,6 @@ React Native, Redux
 
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/attendify-tracker.appspot.com/o/Screenshots%2FGroup%20Screenshot.png?alt=media&token=eb835dcb-d75f-4671-913a-d31b90894ec5)
 
-## Download App
-
-https://drive.google.com/file/d/1iOJn1m4jKh95apn0oHk1bhN5D-TUtDxP/view?usp=sharing
 
 
 
