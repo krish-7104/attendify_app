@@ -157,7 +157,7 @@ const Subject = ({navigation}) => {
           style={styles.addSubjectBtn}
           activeOpacity={0.4}
           onPress={addSubjectHandler}>
-          <Icon name="plus" size={24} color="#181818" />
+          <Icon name="plus" size={24} color="#f5f5f5" />
         </TouchableOpacity>
       </View>
     </View>
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     marginTop: 14,
   },
   addSubjectBtn: {
-    backgroundColor: '#f2f2f2f',
+    backgroundColor: '#000',
     padding: 8,
     borderRadius: 4,
     marginRight: 10,
