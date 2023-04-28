@@ -38,6 +38,9 @@ const EditAttend = ({navigation}) => {
     getAttendanceData();
   }, []);
 
+  /**
+   * The function handles changing the date by either subtracting or adding a day.
+   */
   const dateChangeHandler = type => {
     if (type === 'left') {
       const dateObj = new Date(date);
@@ -54,6 +57,9 @@ const EditAttend = ({navigation}) => {
     }
   };
 
+  /**
+   * This function retrieves attendance data from AsyncStorage and updates the state accordingly.
+   */
   const getAttendanceData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('attendance');
@@ -67,6 +73,9 @@ const EditAttend = ({navigation}) => {
     }
   };
 
+  /**
+   * The function stores the attendance data in AsyncStorage if it exists.
+   */
   const storeAttendanceHandler = async () => {
     if (attendance) {
       try {
@@ -77,6 +86,10 @@ const EditAttend = ({navigation}) => {
     }
   };
 
+  /**
+   * The function edits attendance data by removing a specific date from the present or absent array of
+   * a subject.
+   */
   const editAttendance = (id, date) => {
     let subjId;
     attendance.map((ele, ind) => {
@@ -103,6 +116,9 @@ const EditAttend = ({navigation}) => {
     storeAttendanceHandler();
   };
 
+  /**
+   * The function prompts the user with an alert to confirm the deletion of attendance for a subject.
+   */
   const removeAttendanceHandler = (id, date) => {
     Alert.alert(
       'Are You Sure?',

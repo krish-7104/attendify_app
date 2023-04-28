@@ -50,6 +50,9 @@ const Main = ({navigation}) => {
     storeAttendanceHandler();
   }, [attendance]);
 
+  /**
+   * The function handles changing the date by either subtracting or adding a day.
+   */
   const dateChangeHandler = type => {
     if (type === 'left') {
       const dateObj = new Date(date);
@@ -65,6 +68,9 @@ const Main = ({navigation}) => {
       }
     }
   };
+  /**
+   * This function retrieves attendance data from AsyncStorage and sets it to a state using dispatch.
+   */
   const getAttendanceData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('attendance');
@@ -78,6 +84,9 @@ const Main = ({navigation}) => {
     }
   };
 
+  /**
+   * This function stores attendance data in AsyncStorage.
+   */
   const storeAttendanceHandler = async () => {
     if (attendance) {
       try {
@@ -88,6 +97,10 @@ const Main = ({navigation}) => {
     }
   };
 
+  /**
+   * The function adds attendance for a subject based on the type of attendance (present, absent, or
+   * cancel) and updates the state accordingly.
+   */
   const addAttendanceHandler = (type, id) => {
     let newDate = new Date();
     let subjId;

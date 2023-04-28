@@ -49,6 +49,10 @@ const Subject = ({navigation}) => {
     });
   }, [navigation]);
 
+  /**
+   * This function retrieves attendance data from AsyncStorage and sorts it by ID if it exists,
+   * otherwise it sets the value to an empty array.
+   */
   const getAttendanceData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('attendance');
@@ -64,6 +68,9 @@ const Subject = ({navigation}) => {
     }
   };
 
+  /**
+   * The function stores attendance data in AsyncStorage as a JSON string.
+   */
   const storeData = async () => {
     if (attendance) {
       try {
@@ -74,6 +81,10 @@ const Subject = ({navigation}) => {
     }
   };
 
+  /**
+   * This function adds a new subject to an attendance list with a randomly generated ID and default
+   * values for present, absent, and cancel.
+   */
   const addSubjectHandler = () => {
     let id = Math.round(Math.random() * 10000);
     if (input.length !== 0) {
@@ -96,6 +107,10 @@ const Subject = ({navigation}) => {
     }
   };
 
+  /**
+   * The function prompts the user with an alert to confirm the deletion of a subject and its attendance
+   * data.
+   */
   const removeSubjectHandler = id => {
     Alert.alert(
       'Are You Sure?',

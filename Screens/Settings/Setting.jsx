@@ -34,6 +34,10 @@ const Setting = ({navigation}) => {
   }, [navigation]);
 
   const dispatch = useDispatch();
+  /**
+   * The function displays an alert asking the user to confirm if they want to delete attendance data
+   * and calls the deleteData function if the user selects "Yes".
+   */
   const confirmAlert = () => {
     Alert.alert(
       'Are You Sure?',
@@ -46,13 +50,18 @@ const Setting = ({navigation}) => {
         },
         {
           text: 'Yes',
-          onPress: () => deleteDate(),
+          onPress: () => deleteData(),
         },
       ],
       {cancelable: false},
     );
   };
-  const deleteDate = () => {
+
+  /**
+   * The function deletes data, clears AsyncStorage, shows a toast message, and navigates to the Home
+   * screen.
+   */
+  const deleteData = () => {
     dispatch(setValueHandler([]));
     AsyncStorage.clear();
     ToastAndroid.show('Data Cleared!', ToastAndroid.SHORT);
